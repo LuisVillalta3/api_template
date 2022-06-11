@@ -6,7 +6,7 @@ import {
   DataTypes,
 } from "sequelize";
 import { db } from "@config/db";
-import { Role } from "@models/Role";
+// import { Role } from "@models/Role";
 
 class Permission extends Model<InferAttributes<Permission>, InferCreationAttributes<Permission>> {
   declare id: CreationOptional<number>;
@@ -18,11 +18,11 @@ class Permission extends Model<InferAttributes<Permission>, InferCreationAttribu
   declare description: string;
 
   static associate(): void {
-    this.belongsToMany(Role, {
-      through: "mnt_roles_permissions",
-      foreignKey: "id_permission",
-      otherKey: "id_role",
-    });
+    // this.belongsToMany(Role, {
+    //   through: "mnt_roles_permissions",
+    //   foreignKey: "id_permission",
+    //   otherKey: "id_role",
+    // });
   }
 }
 

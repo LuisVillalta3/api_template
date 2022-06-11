@@ -27,11 +27,11 @@ class User extends Model<InferAttributes<User>, InferCreationAttributes<User>> {
       targetKey: "id",
     });
 
-    this.belongsToMany(User, {
-      through: "sys_teams_users",
-      foreignKey: "user_id",
-      otherKey: "team_id",
-    });
+    // this.belongsToMany(User, {
+    //   through: "sys_teams_users",
+    //   foreignKey: "user_id",
+    //   otherKey: "team_id",
+    // });
   }
 }
 

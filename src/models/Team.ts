@@ -6,7 +6,7 @@ import {
   DataTypes,
 } from "sequelize";
 import { db } from "@config/db";
-import { User } from "./User";
+// import { User } from "./User";
 
 class Team extends Model<InferAttributes<Team>, InferCreationAttributes<Team>> {
   declare id: CreationOptional<number>;
@@ -14,11 +14,11 @@ class Team extends Model<InferAttributes<Team>, InferCreationAttributes<Team>> {
   declare name: string;
 
   static associate(): void {
-    this.belongsToMany(User, {
-      through: "sys_teams_users",
-      foreignKey: "team_id",
-      otherKey: "user_id",
-    });
+    // this.belongsToMany(User, {
+    //   through: "sys_teams_users",
+    //   foreignKey: "team_id",
+    //   otherKey: "user_id",
+    // });
   }
 }
 
