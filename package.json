@@ -10,7 +10,10 @@
     "lint": "eslint . --ext .ts ",
     "lint:fix": "eslint . --ext .ts --fix",
     "make:migration": "sequelize migration:generate --name",
-    "db:migrate": "sequelize db:migrate"
+    "db:migrate": "sequelize db:migrate",
+    "db:migrate:undo": "sequelize db:migrate:undo",
+    "db:migrate:undo:all": "sequelize db:migrate:undo:all",
+    "make:model": "sequelize model:generate --name"
   },
   "keywords": [
     "express",

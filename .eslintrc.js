@@ -16,5 +16,7 @@ module.exports = {
     "import/prefer-default-export": 0,
     quotes: ["error", "double"],
     "import/extensions": 0,
+    "linebreak-style": 0,
+    "no-use-before-define": 0,
   },
 };
