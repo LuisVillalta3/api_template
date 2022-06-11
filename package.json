@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon --exec ts-node src/index.ts",
     "db:create": "sequelize db:create",
+    "db:drop": "sequelize db:drop",
     "prepare": "husky install",
     "lint": "eslint . --ext .ts ",
     "lint:fix": "eslint . --ext .ts --fix",
@@ -13,7 +14,11 @@
     "db:migrate": "sequelize db:migrate",
     "db:migrate:undo": "sequelize db:migrate:undo",
     "db:migrate:undo:all": "sequelize db:migrate:undo:all",
-    "make:model": "sequelize model:generate --name"
+    "make:model": "sequelize model:generate --name",
+    "make:seed": "sequelize seed:generate --name",
+    "db:seed:all": "sequelize db:seed:all",
+    "db:seed:undo:all": "sequelize db:seed:undo:all",
+    "db:setup": "yarn db:create && yarn db:migrate && yarn db:seed:all"
   },
   "keywords": [
     "express",

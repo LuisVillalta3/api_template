@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { db } from "@config/db";
 import app from "./app";
+import "./models";
 
 async function run() {
   try {

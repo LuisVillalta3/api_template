@@ -6,27 +6,23 @@ import {
   DataTypes,
 } from "sequelize";
 import { db } from "@config/db";
-import { Role } from "@models/Role";
+import { Permission } from "./Permission";
 
-class Permission extends Model<InferAttributes<Permission>, InferCreationAttributes<Permission>> {
+class Role extends Model<InferAttributes<Role>, InferCreationAttributes<Role>> {
   declare id: CreationOptional<number>;
 
   declare name: string;
 
-  declare code: string;
-
-  declare description: string;
-
   static associate(): void {
-    this.belongsToMany(Role, {
+    this.belongsToMany(Permission, {
       through: "mnt_roles_permissions",
-      foreignKey: "id_permission",
-      otherKey: "id_role",
+      foreignKey: "id_role",
+      otherKey: "id_permission",
     });
   }
 }
 
-Permission.init({
+Role.init({
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -37,19 +33,10 @@ Permission.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
-  code: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true,
-  },
-  description: {
-    type: DataTypes.STRING,
-    allowNull: true,
-  },
 }, {
   timestamps: false,
   sequelize: db,
-  tableName: "mnt_permissions",
+  tableName: "mnt_roles",
 });
 
-export { Permission };
+export { Role };
