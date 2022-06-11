@@ -1,6 +1,11 @@
 /* eslint-disable no-console */
+import express from "express";
 import app from "./app";
 import "./models";
+
+app.use(express.json());
+// eslint-disable-next-line import/first
+import "./routes";
 
 async function run() {
   const port = Number(process.env.APP_PORT) || 3000;

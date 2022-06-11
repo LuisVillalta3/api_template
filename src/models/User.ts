@@ -33,6 +33,14 @@ class User extends Model<InferAttributes<User>, InferCreationAttributes<User>> {
     //   otherKey: "team_id",
     // });
   }
+
+  public toJSON(): object {
+    return {
+      email: this.email,
+      name: this.name,
+      code: this.code,
+    };
+  }
 }
 
 User.init({
