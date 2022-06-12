@@ -1,10 +1,7 @@
 /* eslint-disable no-console */
-import express from "express";
 import app from "./app";
 import "./models";
-
-app.use(express.json());
-// eslint-disable-next-line import/first
+import "./docs";
 import "./routes";
 
 async function run() {
