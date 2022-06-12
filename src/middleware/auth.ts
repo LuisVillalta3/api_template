@@ -25,4 +25,4 @@ const verifyToken = (req: Request, res: Response, next: NextFunction) => {
   return next();
 };
 
-export default verifyToken;
+export { verifyToken as auth };
