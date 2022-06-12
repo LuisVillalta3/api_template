@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { LoginController } from "@/controllers/Auth/LoginController";
 import { validate } from "@/middleware/validate";
-import { LoginSchema } from "@/schemas/LoginSchema";
-import { RefreshTokenSchema } from "@/schemas/RefreshTokenSchema";
+import { LoginSchema } from "@/schemas/validators/LoginSchema";
+import { RefreshTokenSchema } from "@/schemas/validators/RefreshTokenSchema";
 
 const router = Router();
 

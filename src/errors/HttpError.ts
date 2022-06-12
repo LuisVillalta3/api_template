@@ -1,4 +1,4 @@
-export class HttpError extends Error {
+export class HttpException extends Error {
   declare statusCode: number;
 
   declare message: string;
